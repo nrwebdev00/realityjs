@@ -9,3 +9,11 @@
 .navbar-brand{
   font-size: 1.45rem;
 }
+#a-login, #a-register{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+#span-login, #span-register{
+  padding: .5%;
+  font-size: 1.15rem;
+}
