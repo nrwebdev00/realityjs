@@ -1,0 +1,23 @@
+.Home-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Home-page-top{
+  width: 100%;
+  min-height: 750px;
+
+}
+.Home-page-top .container{
+ margin: auto;
+}
+.home-searching{
+  margin-top: 5%;
+  border: 2px solid black;
+  height: 600px;
+  background-color: #919aa1;
+  border-radius: 5px;
+  padding: 2%;
+  opacity: .85;
+}

@@ -1,0 +1,10 @@
+.login-btn, .register-btn{
+  width: 95%;
+  font-size: 1.5rem;
+  margin: 2.5%;
+  transition: .80s ease-in-out;
+}
+
+.login-btn:hover, .register-btn:hover{
+  color: gold;
+}
