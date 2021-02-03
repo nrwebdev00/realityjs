@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ForgotPassword from './pages/ForgotPassword';
+import Profile from './pages/Profile.js';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Router>
         <Header />
         <Switch>
+          <Route path='/profile' component={Profile} />
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
           <Route path='/forgot' component={ForgotPassword} />

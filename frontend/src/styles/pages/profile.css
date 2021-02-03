@@ -1,0 +1,7 @@
+.edit-profile, .request-contacts{
+  width: 97%;
+  min-height: 500px;
+  height: 100%;
+  border: 1px solid black;
+  margin: 1.5%
+}

@@ -5,7 +5,10 @@ import {
   USER_LOGOUT,
   USER_LOGIN_FAIL,
   USER_LOGIN_SUCCESS,
-  USER_LOGIN_REQUEST
+  USER_LOGIN_REQUEST,
+  USER_PROFILE_VIEW_FAIL,
+  USER_PROFILE_VIEW_REQUEST,
+  USER_PROFILE_VIEW_SUCCESS,
  } from '../actions/types.js';
 
 
@@ -47,5 +50,25 @@ import {
           error: action.payload
         }
       default: return state
+   }
+ }
+ export const userProfileViewReducer = (state = { user: {} }, action ) =>{
+   switch(action.type){
+     case USER_PROFILE_VIEW_REQUEST:
+       return{
+         ...state,
+         loading: true
+       }
+      case USER_PROFILE_VIEW_SUCCESS:
+        return{
+          loading: false,
+          user: action.payload
+        }
+      case USER_PROFILE_VIEW_FAIL:
+        return{
+          loading: false,
+          error: action.payload
+        }
+      default: return state;
    }
  }

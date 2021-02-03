@@ -16,9 +16,9 @@ const router = express.Router();
 router.route('/login').post( loginUser );
 router.route('/register').post( registerUser );
 router.route('/profile').get(protect, viewProfile ).put(protect, updateUser);
-router.route('/:role').get(protect, admin, viewAllUserAdmin);
+// router.route('/:role').get(protect, admin, viewAllUserAdmin); route not working
 router.route('/:id')
-    .get(protect, admin, viewUserAdmin )
+    // .get(protect, admin, viewUserAdmin ) route not working
     .delete(protect, admin, removeUserAdmin)
     .put(protect, admin, updateUserAdmin);
 
