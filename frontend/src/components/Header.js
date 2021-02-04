@@ -10,7 +10,7 @@ const Header = () => {
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
-  const { isStaff } = userInfo 
+   
 
 
   const logoutHandler = () =>{
@@ -25,8 +25,8 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-left'>
-              <NavItem>
-                <NavLink href='/home/'>Home</NavLink>
+            <NavItem>
+                <NavLink href='/'>Home</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href='/about/'>About</NavLink>
@@ -35,52 +35,41 @@ const Header = () => {
                 <NavLink href='listings'>Featured Listings</NavLink>
               </NavItem>
             </Nav>
-            <Nav className='ml-auto'>
-                <NavItem>
-                {localStorage.getItem('userInfo') ? (
-                  <NavDropdown title={userInfo.name} id='username'>
-                    <LinkContainer to='/profile'>
-                      <NavDropdown.Item>Profile</NavDropdown.Item>
-                    </LinkContainer>
-                    {isStaff ? (
-                      <LinkContainer to='/staff'>
-                        <NavDropdown.Item>Staff Dashboard</NavDropdown.Item>
-                      </LinkContainer>
-                    ):(null)}
-                    <NavDropdown.Item onClick={logoutHandler} >
-                      Logout
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                ):(
-                  <LinkContainer to='/login'>
-                    <Nav.Link id='a-login'>
-                      <FaUser style={{fontSize: '1.5rem'}} />
-                      <span id='span-login'>Login</span>
-                    </Nav.Link>
+            { userInfo ? (
+              <Nav className='ml-auto'>
+                <NavDropdown title={userInfo.name} id='username'>
+                  <LinkContainer to='/profile'>
+                    <NavDropdown.Item>Profile</NavDropdown.Item>
                   </LinkContainer>
-                )
-                }
-                </NavItem>
-                <NavItem>
-                  {localStorage.getItem('userInfo') ? (null) : (
-                    <LinkContainer to='/register'>
-                      <Nav.Link id='a-register'>
-                        <FaUserPlus style={{fontSize: '1.75rem'}}/>
-                        <span id='span-register'>Register</span>
-                      </Nav.Link>
+                  {userInfo.isStaff ? (
+                    <LinkContainer to='/staff'>
+                      <NavDropdown.Item>Staff Page</NavDropdown.Item>
                     </LinkContainer>
-                  )}
-                </NavItem>
-                {/* <NavItem>
-                  {isStaff ? (
-                    <NavDropdown title='Staff' id='staffMenu'>
-                      <LinkContainer to='/staff'>
-                        <NavDropdown.Item>Staff Dashboard</NavDropdown.Item>
-                      </LinkContainer>
-                    </NavDropdown>
-                  ) : (null)}
-                </NavItem> */}
-            </Nav>
+                  ):(null)}
+                    <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+              ):(
+                <Nav className='ml-auto'>
+                  <NavItem>
+                    <NavLink href='/login'>
+                      Login{'  '}
+                      <FaUser style={{ fontSize: '1.35rem' }} />
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink href='/register'>
+                      Register{'  '}
+                      <FaUserPlus style={{ fontSize: '1.6rem'}} />  
+                    </NavLink>
+                  </NavItem>
+                </Nav>
+              )}
+              {/* <Nav className='ml-auto'>
+                <NavItem>
+                  
+                </NavItem> 
+            </Nav> */}
           </Navbar.Collapse>
         </div>
       </Navbar>

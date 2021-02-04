@@ -1,0 +1,13 @@
+.user-list-options-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+.list-options-btn{
+  font-size: 1rem;
+  transition: .5s ease-in-out;
+}
+.list-options-btn:hover{
+  color: gold;
+}

@@ -7,9 +7,9 @@ import {
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
-  USER_PROFILE_VIEW_FAIL,
-  USER_PROFILE_VIEW_REQUEST,
-  USER_PROFILE_VIEW_SUCCESS
+  USER_UPDATE_PROFILE_REQUEST,
+  USER_UPDATE_PROFILE_SUCCESS,
+  USER_UPDATE_PROFILE_FAIL,
 } from './types.js';
 
 export const logout = () => (dispatch) =>{
@@ -68,28 +68,33 @@ export const login = ( email, password ) => async(dispatch) =>{
   }
 }
 
-export const userProfileView = () => async(dispatch, getState) =>{
+export const updateProfile = (user) => async (dispatch, getState) => {
   try {
     dispatch({
-      type: USER_PROFILE_VIEW_REQUEST,
+      type: USER_UPDATE_PROFILE_REQUEST,
     })
+
     const {
       userLogin: { userInfo },
     } = getState();
+
     const config = {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
     }
-    const { data } = await axios.get(`/api/users/profile`, config)
+
+    const { data } = await axios.put(`/api/users/profile`, user, config)
+
     dispatch({
-      type: USER_PROFILE_VIEW_SUCCESS,
+      type: USER_UPDATE_PROFILE_SUCCESS,
       payload: data
     })
+
   } catch (error) {
     dispatch({
-      type:USER_PROFILE_VIEW_FAIL,
-      payload: error.response && error.response.data.message ? error.response.data.message : error.message
+      type: USER_UPDATE_PROFILE_FAIL,
+      payload: error.response && error.response.data.message ? error.response.data.message : error.message,
     })
   }
 }

@@ -1,0 +1,32 @@
+.edit-profile-modal .title-wrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#edit-profile-title{
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  letter-spacing: 3px;
+}
+#edit-profile-close-btn{
+  border: 2px solid white;
+  padding: .75%;
+  border-radius: 100px;
+  color: white;
+  text-align: right;
+  cursor: pointer;
+  transition: .25s ease-in-out;
+}
+#edit-profile-close-btn:hover{
+  color: #d9534f;
+  border: 2px solid #d9534f;
+}
+#edit-profile-btn{
+  width: 100%;
+  font-size: 1.5rem;
+  transition: .5s ease-in-out;
+}
+#edit-profile-btn:hover{
+  color: gold;
+}

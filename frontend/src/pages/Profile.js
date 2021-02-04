@@ -3,6 +3,7 @@ import {Container, Row, Col, Table} from 'react-bootstrap';
 import { FaEdit } from 'react-icons/fa'
 import { useSelector } from 'react-redux';
 import Modal from 'react-modal';
+import EditProfileModal from '../modals/EditProfileModal.js';
 
 // Custom Modal Styles
 const customStyle ={
@@ -13,7 +14,7 @@ const customStyle ={
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    width                 : '65vw',
+    width                 : '55vw',
     height                : '65vh',
     backgroundColor       : '#919aa1',
     border                : '2px solid black',
@@ -65,17 +66,17 @@ const Profile = ({ location, history}) => {
                 <tr>
                   <th>Name:</th>
                   <th>{name}</th>
-                  <th><FaEdit onClick={openModal} /></th>
+                  <th style={{ cursor: 'pointer'}}><FaEdit onClick={openModal} /></th>
                 </tr>
                 <tr>
                   <th>Email:</th>
                   <th>{email}</th>
-                  <th><FaEdit onClick={openModal} /></th>
+                  <th style={{ cursor: 'pointer'}} ><FaEdit onClick={openModal} /></th>
                 </tr>
                 <tr>
                   <th>Password:</th>
                   <th>********</th>
-                  <th><FaEdit onClick={openModal} /></th>
+                  <th style={{ cursor: 'pointer'}}><FaEdit onClick={openModal} /></th>
                 </tr>
               </tbody>
             </Table>
@@ -84,8 +85,7 @@ const Profile = ({ location, history}) => {
               onRequestClose={closeModal}
               style={customStyle}
             >
-              <h1>Edit User Modal</h1>
-              {/* Component for modal */}
+              <EditProfileModal closeModal={closeModal} />
             </Modal>
           </div>
         </Col>

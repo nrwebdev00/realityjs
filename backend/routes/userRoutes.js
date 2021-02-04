@@ -16,11 +16,16 @@ const router = express.Router();
 router.route('/login').post( loginUser );
 router.route('/register').post( registerUser );
 router.route('/profile').get(protect, viewProfile ).put(protect, updateUser);
-// router.route('/:role').get(protect, admin, viewAllUserAdmin); route not working
-router.route('/:id')
-    // .get(protect, admin, viewUserAdmin ) route not working
+router.route('/:role').get(protect, admin, viewAllUserAdmin); 
+router.route('/single/:id')
+    .get(protect, admin, viewUserAdmin)
     .delete(protect, admin, removeUserAdmin)
     .put(protect, admin, updateUserAdmin);
+
+// router.route('a/:id')
+//     .get(protect, admin, viewUserAdmin )
+//     .delete(protect, admin, removeUserAdmin)
+//     .put(protect, admin, updateUserAdmin);
 
 export default router;
 

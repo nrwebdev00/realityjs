@@ -6,9 +6,9 @@ import {
   USER_LOGIN_FAIL,
   USER_LOGIN_SUCCESS,
   USER_LOGIN_REQUEST,
-  USER_PROFILE_VIEW_FAIL,
-  USER_PROFILE_VIEW_REQUEST,
-  USER_PROFILE_VIEW_SUCCESS,
+  USER_UPDATE_PROFILE_REQUEST,
+  USER_UPDATE_PROFILE_SUCCESS,
+  USER_UPDATE_PROFILE_FAIL,
  } from '../actions/types.js';
 
 
@@ -42,33 +42,36 @@ import {
       case USER_LOGIN_SUCCESS:
         return{
           loading: false,
+          success: true,
           userInfo: action.payload
         }
       case USER_LOGIN_FAIL:
         return{
           loading: false,
+          success: false,
           error: action.payload
         }
       default: return state
    }
  }
- export const userProfileViewReducer = (state = { user: {} }, action ) =>{
+
+ export const userProfileUpdateReducer = ( state = {}, action ) => {
    switch(action.type){
-     case USER_PROFILE_VIEW_REQUEST:
-       return{
-         ...state,
-         loading: true
-       }
-      case USER_PROFILE_VIEW_SUCCESS:
-        return{
-          loading: false,
-          user: action.payload
-        }
-      case USER_PROFILE_VIEW_FAIL:
-        return{
-          loading: false,
-          error: action.payload
-        }
-      default: return state;
+    case USER_UPDATE_PROFILE_REQUEST:
+      return{
+        ...state, 
+        loading: true
+      }
+    case USER_UPDATE_PROFILE_SUCCESS:
+      return{
+        loading: false,
+        user: action.payload
+      }
+    case USER_UPDATE_PROFILE_FAIL:
+      return{
+        loading: false,
+        error: action.payload
+      }
+    default: return state;
    }
  }
