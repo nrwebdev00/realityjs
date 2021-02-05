@@ -1,0 +1,32 @@
+.add-new-title-wrapper{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+#add-new-title{
+    color: white;
+    text-decoration: underline;
+    text-align: left;
+    margin-left: 10%;
+}
+#add-new-close-btn{
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 2.5vw;
+    color: white;
+    transition: .75s ease-in-out;
+    padding: .5% 1.5%;
+}
+#add-new-close-btn:hover{
+    color: #d9534f;
+    border: 2px solid #d9534f;
+}
+.add-new-user-btn{
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 3%;
+    transition: .75s ease-in-out;
+}
+.add-new-user-btn:hover{
+    color: gold;
+}

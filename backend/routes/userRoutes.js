@@ -7,12 +7,14 @@ import {
     viewAllUserAdmin,
     removeUserAdmin,
     viewUserAdmin,
-    updateUserAdmin } from '../controllers/userController.js'
+    updateUserAdmin,
+    newUserAdmin } from '../controllers/userController.js'
 import { protect, admin } from '../middleware/authMiddleware.js'
 
 
 const router = express.Router();
 
+router.route('/newUser').post(protect, admin, newUserAdmin);
 router.route('/login').post( loginUser );
 router.route('/register').post( registerUser );
 router.route('/profile').get(protect, viewProfile ).put(protect, updateUser);

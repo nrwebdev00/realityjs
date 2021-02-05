@@ -103,6 +103,7 @@ const updateUser = asyncHandler( async(req, res)=>{
 //@route GET /api/users/:role
 //@access PRIVATE-ADMIN
 const viewAllUserAdmin = asyncHandler( async(req, res)=>{
+    
     const role = req.params.role.toString();
     switch(role){
         case 'users':
@@ -114,6 +115,15 @@ const viewAllUserAdmin = asyncHandler( async(req, res)=>{
             })
             return (res.json(users));
         case 'all':
+            const pageSize = 10
+            const page = Number(req.query.pageNumber) || 1
+            const keyword = req.query.keyword 
+            ? { 
+                name: {
+                    $regex: req.query.keyword,
+                    $options: 'i'
+                }, 
+            } : {}
             const all = await User.find({ isActive: true })
             return res.json(all)
         case 'staff':
@@ -214,14 +224,14 @@ const updateUserAdmin = asyncHandler(async(req,res)=>{
 //@route POST /api/user/create
 //@access PRIVATE-ADMIN
 const newUserAdmin = asyncHandler( async (req, res)=>{
-    const { name, email, isAdmin, isStaff, isRealtor } = req.body;
+    const { name, email, isAdmin, isStaff, isRealtor, isActive, password } = req.body;
     const userExists = await User.findOne({ email })
     if(userExists){
         res.status(400)
         throw new Error('User Already Exists')
     }
     const tempPassword = 'temp123password'
-    const user = await User.create({ name, email, isAdmin, isStaff, isRealtor, tempPassword })
+    const user = await User.create({ name, email, isAdmin, isStaff, isRealtor, isActive, password })
     if(user){
         await res.status(200).json({
             msg: `User ${user.name} was created with email of ${email} password is the temp password`

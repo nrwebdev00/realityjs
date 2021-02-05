@@ -21,6 +21,7 @@
 
 /* Modals */
 @import './modals/EditProfileModal.css';
+@import './modals/AdminAddNewUserModal.css';
 
 /* Media Quires */
 @import './media/HeaderMedia.css';

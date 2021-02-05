@@ -8,7 +8,9 @@ import {
   ADMIN_USERS_DETAIL_SUCCESS,
   ADMIN_USERS_UPDATE_FAIL,
   ADMIN_USERS_UPDATE_SUCCESS,
-  ADMIN_USERS_UPDATE_REQUEST
+  ADMIN_USERS_UPDATE_REQUEST,
+  ADMIN_USERS_ADD_NEW_FAIL,
+  ADMIN_USERS_ADD_NEW_REQUEST
   
 } from './types.js';
 
@@ -88,6 +90,33 @@ export const adminUpdateUser = (user, id) => async (dispatch, getState) =>{
     dispatch({
       type: ADMIN_USERS_UPDATE_FAIL,
       payload: error.response && error.response.data.message ? error.response.data.message : error.response
+    })
+  }
+}
+
+export const adminAddNewUser = (user) => async(dispatch, getState)=>{
+  try {
+    dispatch({
+      type: ADMIN_USERS_ADD_NEW_REQUEST,
+    })
+    
+    const {
+      userLogin: { userInfo }
+    } = getState()
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    }
+
+    await axios.post(`/api/user/create`, user, config);
+
+  } catch (error) {
+    dispatch({
+      type: ADMIN_USERS_ADD_NEW_FAIL,
+      payload: error.response && error.response.data.message ? error.response.data.message : error.message
     })
   }
 }
