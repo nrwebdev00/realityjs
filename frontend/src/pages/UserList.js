@@ -1,20 +1,19 @@
-import React from 'react';
+import React , { useState }from 'react';
+import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import Message from '../components/Message.js';
-import Loader from '../components/Loader.js';
 import { listUser } from '../actions/adminUsersAction.js';
 import StaffNavBar from '../components/StaffNavBar.js';
-import { FaUserEdit } from 'react-icons/fa'
+import { FaUserEdit } from 'react-icons/fa';
+
+
 
 const UserList = ({ history }) => {
   const dispatch = useDispatch()
 
   const adminUsersList = useSelector(state => state.adminUsersList)
   const { loading, error, users } = adminUsersList
-  
-  console.log(users);
   
   return (
     <div>
@@ -70,6 +69,7 @@ const UserList = ({ history }) => {
           <tbody>
             {users ? (
               users.map((user) => (
+                
                 <tr key={user._id} >
                   <td>{user._id}</td>
                   <td>{user.name}</td>
@@ -77,15 +77,22 @@ const UserList = ({ history }) => {
                     <a href={`mailto:${user.email}`}>{user.email}</a>
                   </td>
                   <td>
-                    <LinkContainer 
-                      to={`/staff/userList/${user._id}`}
-                      style={{
-                        cursor: 'pointer',
-                        fontSize: '1.5rem'
+                    <Link
+                      to={{
+                        pathname:'/staff/userList/'+ user._id ,
+                        userProps:{
+                          _id: user._id,
+                          isStaff: user.isStaff,
+                          isAdmin: user.isAdmin,
+                          isRealtor: user.isRealtor,
+                          isActive: user.isActive,
+                          name: user.name,
+                          email: user.email,
+                        }
                       }}
                     >
                       <FaUserEdit />
-                    </LinkContainer>
+                    </Link>
                   </td>
                 </tr>
               ))

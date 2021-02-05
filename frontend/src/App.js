@@ -11,6 +11,7 @@ import Register from './pages/Register.js';
 import Profile from './pages/Profile.js';
 import Staff from './pages/Staff.js';
 import UserList from './pages/UserList.js';
+import UserDetail from './pages/UserDetail.js';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Router>
         <Header />
         <Switch>
+          <Route path='/staff/userList/:id' component={UserDetail} />
           <Route path='/staff/userList' component={UserList}/>
           <Route path='/staff' component={Staff} />
           <Route path='/profile' component={Profile} />

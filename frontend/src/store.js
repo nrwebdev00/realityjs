@@ -10,14 +10,18 @@ import {
 } from './reducers/userReducers.js';
 
 import{
-  adminUsersListReducer
+  adminUsersListReducer,
+  adminUserDetailReducer,
+  adminUserUpdateReducer,
 } from './reducers/adminUsersReducers.js';
 
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
   userLogin: userLoginReducer,
   userProfileUpdate: userProfileUpdateReducer,
-  adminUsersList: adminUsersListReducer
+  adminUsersList: adminUsersListReducer,
+  adminUserDetail: adminUserDetailReducer,
+  adminUserUpdate: adminUserUpdateReducer
 })
 
 const userInfoFromLocalStorage = () => {

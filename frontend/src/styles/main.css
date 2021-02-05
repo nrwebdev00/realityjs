@@ -13,6 +13,7 @@
 @import './pages/register.css';
 @import './pages/profile.css';
 @import './pages/UserList.css';
+@import './pages//UserDetail.css';
 
 /* Components */
 @import './components/header.css';
