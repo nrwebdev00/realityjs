@@ -13,6 +13,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 
 //Routes Imports
 import usersRoutes from './routes/userRoutes.js';
+import listingsRoutes from './routes/listingsRoutes.js';
 
 dotenv.config()
 
@@ -34,6 +35,7 @@ app.use(bodyParser.urlencoded({
 
 //Mount Routes
 app.use('/api/users', usersRoutes );
+app.use('/api/listings', listingsRoutes );
 
 //Config Routes
 
