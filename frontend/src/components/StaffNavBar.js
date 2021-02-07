@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, NavLink } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap'
 import { useSelector } from 'react-redux';
 import Modal from 'react-modal';

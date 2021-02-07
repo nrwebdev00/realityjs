@@ -1,6 +1,5 @@
-import React , { useState }from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { listUser } from '../actions/adminUsersAction.js';
@@ -13,7 +12,7 @@ const UserList = ({ history }) => {
   const dispatch = useDispatch()
 
   const adminUsersList = useSelector(state => state.adminUsersList)
-  const { loading, error, users } = adminUsersList
+  const { users } = adminUsersList
   
   return (
     <div>

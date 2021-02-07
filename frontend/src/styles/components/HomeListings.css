@@ -22,9 +22,11 @@
     background-color: rgba(145, 154, 161, .75);
     display: grid;
     grid-template-rows: 5fr 3fr 3fr 2fr;
+}
+.home-listings-picture{
     background-repeat: no-repeat;
     background-size: cover;
-    
+    background-position: cover;
 }
 .home-listing-price{
     background-color: #4bbf73;

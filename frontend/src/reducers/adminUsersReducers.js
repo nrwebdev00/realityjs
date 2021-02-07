@@ -89,7 +89,7 @@ export const adminUserAddNewReducer = (state = { user: {} }, action) => {
         loading: false,
         success: true
       }
-    case ADMIN_USERS_DETAIL_FAIL:
+    case ADMIN_USERS_ADD_NEW_FAIL:
       return{
         loading: false,
         error: action.payload

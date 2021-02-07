@@ -5,6 +5,13 @@
 
 
 /* Global Css */
+.breadcrumb{
+    background-color: rgba(145, 154, 161, .65);
+    color: white;
+    margin-top: 1.5%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .85);
+}
 
 
 /* Pages */
@@ -13,7 +20,8 @@
 @import './pages/register.css';
 @import './pages/profile.css';
 @import './pages/UserList.css';
-@import './pages//UserDetail.css';
+@import './pages/UserDetail.css';
+@import './pages/about.css';
 
 /* Components */
 @import './components/header.css';
