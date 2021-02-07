@@ -1,20 +1,19 @@
-import React from 'react'
-import { Container } from 'react-bootstrap';
-import backgroundImage from '../images/1stbackground.jfif'
+import React from 'react';
+
+import HomeSearch from '../components/HomeSearch.js';
+import HomeListings from '../components/HomeListings.js';
+import HomeRealtors from '../components/HomeRealtors.js';
+import Footer from '../components/Footer.js';
 
 const Home = () => {
+  
+
   return (
     <div className='Home-page'>
-    <div 
-      className='Home-page-top'
-      style={{ backgroundImage: `url(${backgroundImage})`}}
-    >
-      <Container>
-        <form className='home-searching'>
-          <h3>Property seacrhing</h3>
-        </form>
-      </Container>
-    </div>
+    <HomeSearch />
+    <HomeListings />
+    <HomeRealtors />
+    <Footer />
   </div>
   )
 }

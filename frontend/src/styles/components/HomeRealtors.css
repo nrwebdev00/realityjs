@@ -1,0 +1,37 @@
+.home-realtors-title-wrapper{
+    margin-top: 5%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 12.5%;
+    opacity: 1;
+}
+.home-realtors-title-wrapper h1{
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .85);
+}
+.home-realtors-title-wrapper h1:nth-child(2){
+    font-size: 3.0rem;
+}
+.home-realtor-body{
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: 6fr 10fr;
+    grid-gap: 5%
+}
+.home-realtor-body img{
+   width: 100%;
+}
+.home-realtor-body p{
+    font-size: 1.1rem;
+    color: white;
+    line-height: 1.75;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .95);
+}
+.btn-2{
+    margin-top: 2.5%;
+    width: 100%;
+    background-color: #4bbf73;
+    font-size: 1.5rem;
+}

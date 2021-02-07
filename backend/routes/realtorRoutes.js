@@ -11,6 +11,6 @@ import { protect, admin, staff } from '../middleware/authMiddleware.js';
 const router = express.Router();
 
 router.route('/').get(getAllRealtors).post(protect, admin, createRealtor)
-router,route('/:id').get(getSingleRealtor).put(protect, updateRealtor).delete(protect, admin, removeRealtor);
+router.route('/:id').get(getSingleRealtor).put(protect, updateRealtor).delete(protect, admin, removeRealtor);
 
 export default router;

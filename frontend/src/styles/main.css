@@ -1,5 +1,5 @@
 /* CDN */
-
+ 
 /* Bootstrap */
 @import './bootstrap.min.css';
 
@@ -17,7 +17,11 @@
 
 /* Components */
 @import './components/header.css';
+@import './components/footer.css';
 @import './components/StaffNavBar.css';
+@import './components/HomeSearch.css';
+@import './components/HomeListings.css';
+@import './components/HomeRealtors.css';
 
 /* Modals */
 @import './modals/EditProfileModal.css';

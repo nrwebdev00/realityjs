@@ -1,0 +1,94 @@
+.home-listings-title-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5%;
+}
+.home-listings-title-wrapper h1{
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    color: #343a40;
+}
+.home-listings-showcase-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.25%;
+    padding: 0 5%;
+}
+.home-listings-showcase{
+    height: 600px;
+    border: 3px solid #919aa1;
+    border-radius: 5px;
+    background-color: rgba(145, 154, 161, .75);
+    display: grid;
+    grid-template-rows: 5fr 3fr 3fr 2fr;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.home-listing-price{
+    background-color: #4bbf73;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1.5% .5%;
+    width: 30%;
+    height: 15%;
+    border: 1px solid #20c997;
+    border-radius: 5px;
+}
+.home-listings-address{
+    margin-top: 2.5%;
+}
+.home-listings-info{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: .5%;
+}
+.home-listings-info-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2.5%;
+}
+.home-listings-info-item{
+    display: grid;
+    grid-template-columns: 2fr 12fr;
+}
+.home-listings-info-item h3{
+    font-size: 1.05rem;
+    color: white;
+}
+.home-listings-info-item svg{
+    font-size: 1.25rem;
+    color: white
+}
+.home-listings-realtor{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.home-listings-realtor-info{
+    display: grid;
+    grid-gap: 2%;
+    grid-template-columns: 1fr 16fr;
+}
+.home-listings-realtor-info svg{
+    font-size: 1.25rem;
+    color: white;
+    margin-left: 50%;
+}
+.home-listings-realtor-info h2{
+    font-size: 1.35rem;
+    color: white;
+    text-align: center;
+}
+
+.btn-1{
+    width: 100%;
+    background-color: #4bbf73;
+    font-size: 1.5rem;
+    transition: .75s ease-in-out;
+}
+.btn-1:hover{
+    background-color: #20c997;
+    color: black;
+}

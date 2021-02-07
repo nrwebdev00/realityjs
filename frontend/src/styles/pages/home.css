@@ -4,20 +4,26 @@
   justify-content: center;
   align-items: center;
 }
-.Home-page-top{
+.home-page-top{
   width: 100%;
-  min-height: 750px;
-
+  min-height: 800px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
-.Home-page-top .container{
- margin: auto;
+.home-page-middle{
+  width: 100%;
+  min-height: 800px;
+  border-top: 1.5vh solid ;
 }
-.home-searching{
-  margin-top: 5%;
-  border: 2px solid black;
-  height: 600px;
-  background-color: #919aa1;
-  border-radius: 5px;
-  padding: 2%;
-  opacity: .85;
+.home-page-bottom{
+  width: 100%;
+  min-height: 800px;
+  border-top: 1.5vh solid;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: .95;
 }
