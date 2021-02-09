@@ -1,0 +1,32 @@
+
+.listings-page-title-wrapper{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+}
+.listings-page-title{
+    background-color: rgba(0, 123, 255, .55);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listings-page-title h1{
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 4px rgba(145, 154, 161, 1);
+}
+.listings-title{
+    margin-top: 2.5%;
+    text-align: center
+}
+.listings-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1.75%;
+    margin: 4% 0 6% 0;
+    padding: 1% 4% 0 4%;
+}

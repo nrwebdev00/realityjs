@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { FaRibbon, FaPhone, FaEnvelope } from 'react-icons/fa';
 import Footer from '../components/Footer.js';
-import backgroundImage from '../images/pexels-photo-830891.jpeg';
+import AboutHeading from '../components/AboutHeading.js'
 import about1 from '../images/about1.jpeg';
 
 // For static input to be replaced with db
@@ -16,18 +16,10 @@ import realtor3 from '../images/realtor3.jpeg';
 const About = () => {
     return (
         <div className='about-page'>
-           <div 
-                className='about-page-title-wrapper'
-                style={{
-                    backgroundImage: `url(${backgroundImage})`
-                }}
-            >
-               <div className='about-page-title'>
-               <h1>About Reality</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis dui at faucibus ultricies. Nulla facilisi. Nunc dapibus quam eget venenatis posuere. Nam ut dignissim elit. Ut id diam tristique
-                </p>
-               </div>
-            </div>
+           <AboutHeading 
+            name={'About Reality'}
+            text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis dui at faucibus ultricies. Nulla facilisi. Nunc dapibus quam eget venenatis posuere. Nam ut dignissim elit. Ut id diam tristique'}
+           />
             <Container>
                 <Breadcrumb>
                     <Breadcrumb.Item href='/' className='text-white'>Home</Breadcrumb.Item>

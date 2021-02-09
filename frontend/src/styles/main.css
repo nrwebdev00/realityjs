@@ -22,6 +22,9 @@
 @import './pages/UserList.css';
 @import './pages/UserDetail.css';
 @import './pages/about.css';
+@import './pages/realtorDetail.css';
+@import './pages/listings.css';
+@import './pages/listingsDetails.css';
 
 /* Components */
 @import './components/header.css';
@@ -30,6 +33,8 @@
 @import './components/HomeSearch.css';
 @import './components/HomeListings.css';
 @import './components/HomeRealtors.css';
+@import './components/listingSearch.css';
+@import './components/singleListings.css';
 
 /* Modals */
 @import './modals/EditProfileModal.css';

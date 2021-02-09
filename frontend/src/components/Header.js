@@ -29,10 +29,10 @@ const Header = () => {
                 <NavLink href='/'>Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href='/about/'>About</NavLink>
+                <NavLink href='/about'>About</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href='listings'>Featured Listings</NavLink>
+                <NavLink href='/listings'>Featured Listings</NavLink>
               </NavItem>
             </Nav>
             { userInfo ? (

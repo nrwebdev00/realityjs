@@ -1,0 +1,24 @@
+.listings-search-wrapper{
+    width: 100%;
+    margin-top: .75%;
+    min-height: 275px;
+    background-color: rgba(145, 154, 161, .75);
+    border-radius: 10px;
+    box-shadow: 4px 4px 6px rgba(145, 154, 161, 1);
+    padding: 1% 2%;
+}
+.listings-search-row-1{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    grid-gap: .75%;
+}
+.listings-search-row-2{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: .75%;
+}
+.listings-search-row-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: .75%;
+}
